@@ -2,8 +2,8 @@ package com.grupo3.androiddsa.retrofit;
 
 import com.grupo3.androiddsa.domain.Characters;
 import com.grupo3.androiddsa.domain.MyObjects;
+import com.grupo3.androiddsa.domain.Partida;
 import com.grupo3.androiddsa.domain.User;
-import com.grupo3.androiddsa.domain.to.ObjectRecycler;
 import com.grupo3.androiddsa.domain.to.UserRegister;
 import com.grupo3.androiddsa.domain.vo.Credentials;
 
@@ -19,7 +19,7 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface Api {
-    String URL = "http://147.83.7.205:80/dsaApp/";
+    String URL = "http://192.168.141.68:80/dsaApp/";
 
     @POST("gameManager/user/login")
     Call<Void> logInUser(@Body Credentials credentials);
@@ -50,6 +50,9 @@ public interface Api {
 
     @GET("gameManager/user/{email}/characters")
     Call<List<Characters>> getMyCharacters(@Path("email") String email);
+
+    @GET("gameManager/stats/ranking")
+    Call<List<Partida>> getPartidasByPoints();
 
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(URL)

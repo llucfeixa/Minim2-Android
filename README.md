@@ -1,1 +1,2 @@
 Android Mínim 2
+Es demana la llista de les partides ordenades per punts (ordre descendent) i es posa amb un RecyclerView en el fragment de l'esquerra del BottomNavigation. També s'utilitza Picasso per posar la imatge del avatar de cada User.
